@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Experience | Tamoor Ilyas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../../public/css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    header, footer {
+      background: #111;
+      color: #fff;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 0 20px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      justify-content: flex-end;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: #f7c04a;
+    }
+
+    .experience-video-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      align-items: flex-start;
+      padding: 60px 20px;
+      background: #f5f5f5;
+    }
+
+    .experience-content {
+      flex: 1 1 55%;
+    }
+
+    .experience-content h2 {
+      font-size: 2rem;
+      margin-bottom: 15px;
+    }
+
+    .experience-content ul {
+      padding-left: 20px;
+    }
+
+    .experience-content li {
+      margin-bottom: 20px;
+    }
+
+    .video-wrapper {
+      flex: 1 1 40%;
+    }
+
+    .video-wrapper video {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    /* Full Width Gallery Section */
+    .full-gallery-section {
+      width: 100%;
+      padding: 40px 0;
+      background-color: #f9f9f9;
+    }
+
+    .full-gallery-section h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .full-gallery-section p {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .work-gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      padding: 0 30px;
+    }
+
+    .work-gallery img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .work-gallery img:hover {
+      transform: scale(1.03);
+    }
+
+    @media (max-width: 768px) {
+      .work-gallery {
+        grid-template-columns: 1fr;
+        padding: 0 15px;
+      }
+
+      .experience-video-section {
+        flex-direction: column;
+      }
+
+      .video-wrapper, .experience-content {
+        width: 100%;
+      }
+    }
+
+    /* Modal Styling */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.85);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 2.5rem;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    /* Social Links */
+    .social-links {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .social-links p {
+      margin: 10px 0;
+      font-size: 1.1rem;
+    }
+
+    .social-links a {
+      color: #f7c04a;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .social-links a:hover {
+      color: #fff;
+      background-color: #f7c04a;
+      padding: 5px 12px;
+      border-radius: 20px;
+      box-shadow: 0 0 10px rgba(247, 192, 74, 0.4);
+    }
+
+    .social-links i {
+      margin-right: 8px;
+      font-size: 1.2rem;
+      transition: transform 0.3s ease;
+    }
+
+    .social-links a:hover i {
+      transform: scale(1.2);
+    }
+
+    footer {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <h1 class="logo">Tamoor Ilyas</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="experience.html">Experience</a></li>
+          <li><a href="projects.html" Class="active">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+ 
+  <!-- Work Gallery -->
+  <section class="full-gallery-section">
+    <h2>My Work</h2>
+    <p>A few of my recent creative projects:</p>
+
+    <div class="work-gallery">
+      <img src="../../public/images/post2.jpg" alt="Project 1" onclick="openModal(this.src)">
+      <img src="../../public/images/post3.jpg" alt="Project 2" onclick="openModal(this.src)">
+      <img src="../../public/images/post4.jpg" alt="Project 3" onclick="openModal(this.src)">
+      <img src="../../public/images/post5.jpg" alt="Project 4" onclick="openModal(this.src)">
+      <img src="../../public/images/post6.jpg" alt="Project 5" onclick="openModal(this.src)">
+      <img src="../../public/images/post7.jpg" alt="Project 6" onclick="openModal(this.src)">
+    </div>
+  </section>
+
+  <!-- Modal -->
+  <div id="imageModal" class="modal" onclick="closeModal()">
+    <span class="modal-close" onclick="closeModal()">&times;</span>
+    <img id="modalImg" class="modal-content" />
+  </div>
+
+  <!-- Social Links -->
+  <section class="container contact-info" style="margin-top: 60px;">
+    <h2>See More On</h2>
+    <div class="social-links">
+      <p><i class="fab fa-youtube"></i> <a href="https://www.youtube.com/@pakpost.gov.pk1" target="_blank">YouTube</a></p>
+      <p><i class="fab fa-instagram"></i> <a href="https://www.instagram.com/pakpost.gov.pk/?source=omni_redirect" target="_blank">Instagram</a></p>
+      <p><i class="fab fa-whatsapp"></i> <a href="https://www.whatsapp.com/channel/0029Vb18frfAu3aY7sjuwC1g" target="_blank">WhatsApp Channel</a></p>
+      <p><i class="fab fa-facebook"></i> <a href="https://www.facebook.com/people/Pakistan-Post/61572728472859/" target="_blank">Facebook</a></p>
+      <p><i class="fab fa-tiktok"></i> <a href="https://www.tiktok.com/@pakpost.gov.pk" target="_blank">TikTok</a></p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Tamoor Ilyas</p>
+    </div>
+  </footer>
+
+  <!-- Image Modal Script -->
+  <script>
+    function openModal(src) {
+      document.getElementById("modalImg").src = src;
+      document.getElementById("imageModal").style.display = "flex";
+    }
+
+    function closeModal() {
+      document.getElementById("imageModal").style.display = "none";
+    }
+  </script>
+
+</body>
+</html>
